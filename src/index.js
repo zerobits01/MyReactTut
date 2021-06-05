@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // you have to handle whatever you want in App.js component
   <React.StrictMode>
     <App />
   </React.StrictMode>,
