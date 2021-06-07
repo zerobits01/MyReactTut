@@ -3,6 +3,7 @@ import React from 'react';
 import MyForm from '../MyForm/MyForm';
 import MyValid from '../MyValid/MyValid';
 import SendData from '../SendData/SendData';
+import AuthExample from '../AuthExample/AuthExample';
 
 import {
   BrowserRouter as Router,
@@ -38,6 +39,9 @@ class Main extends React.Component {
                             <li>
                                 <Link to="/callback">Send data</Link>
                             </li>
+                            <li>
+                                <Link to="/auth">Fake Auth</Link>
+                            </li>
                         </ul>
                     </nav>
 
@@ -60,6 +64,10 @@ class Main extends React.Component {
                         <Route 
                             path="/callback"
                             component={SendData}
+                        />
+                        <Route 
+                            path="/auth"
+                            component={AuthExample}
                         />
                     </Switch>
                 </div>
