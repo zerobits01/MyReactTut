@@ -182,3 +182,85 @@ function LoginPage() {
     </div>
   );
 }
+
+
+
+/*
+using only one state
+  we can use this.context
+  or we can use static contextType 
+
+
+*/
+
+
+// example of simple context
+
+/*
+const ThemeContext = React.createContext('light');
+
+class App extends React.Component {
+  render() {
+    // Use a Provider to pass the current theme to the tree below.
+    // Any component can read it, no matter how deep it is.
+    // In this example, we're passing "dark" as the current value.
+    return (
+      <ThemeContext.Provider value="dark"> // so when we try to change value we can use .Provider
+        // this only changes the state for the tree below it doesnt change for all components
+        <Toolbar />
+      </ThemeContext.Provider>
+    );
+  }
+}
+
+// A component in the middle doesn't have to
+// pass the theme down explicitly anymore.
+function Toolbar() {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  );
+}
+
+class ThemedButton extends React.Component {
+  // Assign a contextType to read the current theme context.
+  // React will find the closest theme Provider above and use its value.
+  // In this example, the current theme is "dark".
+  static contextType = ThemeContext;
+  render() {
+    return <Button theme={this.context} />;
+  }
+} 
+*/
+
+/*
+const MyContext = React.createContext(defaultValue); // for creating the context state
+
+Creates a Context object. When React renders a component that subscribes to this Context object it will 
+read the current context value from the closest matching Provider above it in the tree.
+
+The defaultValue argument is only used when a component does not have a matching Provider above it in the tree. 
+This default value can be helpful for testing components in isolation without wrapping them. 
+Note: passing undefined as a Provider value does not cause consuming components to use defaultValue.
+
+
+
+
+*/
+
+
+/*
+<MyContext.Consumer>
+  {value => /* render something based on the context value }
+</MyContext.Consumer>
+
+A React component that subscribes to context changes. Using this component lets you subscribe to a context within a function component.
+
+Requires a function as a child. The function receives the current context value and returns a React node. 
+The value argument passed to the function will be equal to the value prop of the closest 
+Provider for this context above in the tree. If there is no Provider for this context above, 
+the value argument will be equal to the defaultValue that was passed to createContext().
+
+
+*/

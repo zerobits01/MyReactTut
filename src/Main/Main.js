@@ -4,6 +4,7 @@ import MyForm from '../MyForm/MyForm';
 import MyValid from '../MyValid/MyValid';
 import SendData from '../SendData/SendData';
 import AuthExample from '../AuthExample/AuthExample';
+import MyApp from '../ContextExample/myapp';
 
 import {
   BrowserRouter as Router,
@@ -42,6 +43,10 @@ class Main extends React.Component {
                             <li>
                                 <Link to="/auth">Fake Auth</Link>
                             </li>
+                            <li>
+                                <Link to="/context">Context</Link>
+                            </li>
+
                         </ul>
                     </nav>
 
@@ -68,6 +73,10 @@ class Main extends React.Component {
                         <Route 
                             path="/auth"
                             component={AuthExample}
+                        />
+                        <Route 
+                            path="/context"
+                            component={MyApp}
                         />
                     </Switch>
                 </div>
