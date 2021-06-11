@@ -5,6 +5,7 @@ import MyValid from '../MyValid/MyValid';
 import SendData from '../SendData/SendData';
 import AuthExample from '../AuthExample/AuthExample';
 import MyApp from '../ContextExample/myapp';
+import Contact from '../contacts/contact';
 
 import {
   BrowserRouter as Router,
@@ -46,6 +47,9 @@ class Main extends React.Component {
                             <li>
                                 <Link to="/context">Context</Link>
                             </li>
+                            <li>
+                                <Link to="/contact">Contatct</Link>
+                            </li>
 
                         </ul>
                     </nav>
@@ -77,6 +81,10 @@ class Main extends React.Component {
                         <Route 
                             path="/context"
                             component={MyApp}
+                        />
+                        <Route 
+                            path="/contact"
+                            component={Contact}
                         />
                     </Switch>
                 </div>
